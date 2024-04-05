@@ -1,0 +1,33 @@
+site_name: My Docs
+nav:
+    - Как запустить первый портал?:
+        - Вот так: my-first-portal.md
+    - Дом: index.md
+theme:
+    name: material # https://squidfunk.github.io/mkdocs-material/
+    logo: TWD_logo.png
+    favicon: TWD_favicon.png
+    features:
+        - navigation.tabs # перемещает навигационное меню наверх
+extra_css:
+    - material-styles.css
+markdown_extensions:
+    - pymdownx.superfences # более гибкое оформление блоков https://facelessuser.github.io/pymdown-extensions/extensions/superfences/
+    - admonition # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#admonition
+    - pymdownx.snippets # Расширение Snippets добавляет возможность встраивать в документ содержимое из произвольных файлов, включая другие документы или исходные файлы
+plugins:
+    - search:
+        lang:
+            - ru
+    - mkdocs-video:
+        is_video: True #изменение тега для видео на конечной странице html (было <iframe>, стало <video>, когда true)
+        video_type: mpeg #- если формат видео не mp4 (по умолчанию), а другой. Этот параметр будет работать только с <video> тегом ( is_video: True)
+        video_autoplay: True # автовоспроизведение видео. Этот параметр будет работать только с <video> тегом ( is_video: True)
+        video_loop: False # зацикливание видео. Этот параметр будет работать только с <video> тегом ( is_video: True)
+        video_muted: True # должно ли видео быть на мьюте. Этот параметр будет работать только с <video> тегом ( is_video: True)
+        video_controls: True # отображение элементов управления видео. Этот параметр будет работать только с <video> тегом ( is_video: True)
+        css_style:
+            width: "100%" #изменение ширины видео по дефолту
+    - redirects:
+        redirect_maps:
+            'Support/new.md': 'LegalInformation/general_info.md'
